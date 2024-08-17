@@ -1,0 +1,226 @@
+.stepColumns {
+    composes: grid from global;
+    composes: gap-sm from global;
+    composes: my-8 from global;
+    composes: lg_grid-cols-3 from global;
+    grid-template-areas:
+        "stepOne stepTwo stepThree";
+}
+
+.stepThreeColumns {
+    composes: stepColumns;
+    composes: lg_grid-cols-3 from global;
+    grid-template-areas:
+        "stepOne stepTwo stepThree";
+}
+
+.stepTwoColumns {
+    composes: stepColumns;
+    composes: lg_grid-cols-2 from global;
+
+    grid-template-areas:
+        "stepOne stepThree"
+        "stepTwo stepThree"
+        ". stepThree";
+}
+
+.stepOneColumn {
+    composes: stepColumns;
+    composes: lg_grid-cols-1 from global;
+    grid-template-areas:
+        "stepOne"
+        "stepTwo"
+        "stepThree";
+}
+
+@media (max-width: 959px) {
+
+    .stepThreeColumns,
+    .stepTwoColumns,
+    .stepOneColumn {
+        grid-template-areas:
+            "stepOne"
+            "stepTwo"
+            "stepThree";
+    }
+}
+
+.stepColumnOne {
+    grid-area: stepOne;
+}
+
+.stepColumnTwo {
+    grid-area: stepTwo;
+}
+
+.stepColumnThree {
+    grid-area: stepThree;
+}
+
+.stepTitle {
+    composes: flex from global;
+    composes: font-bold from global;
+    composes: px-5 from global;
+    composes: py-5 from global;
+    composes: bg-subtle from global;
+    composes: text-inherit from global;
+    composes: text-sm from global;
+    composes: text-center from global;
+    composes: mb-sm from global;
+}
+
+.shippingMethodContainer {
+    composes: mb-sm from global;
+}
+
+.orderReviewContainer {
+    composes: border-2 from global;
+    composes: border-solid from global;
+    composes: border-subtle from global;
+    composes: rounded-md from global;
+    composes: mb-sm from global;
+
+}
+
+.orderSummary {
+    composes: root from '@magento/venia-ui/lib/components/CheckoutPage/OrderSummary/orderSummary.module.css';
+    composes: border-none from global;
+    composes: lg_border-none from global;
+    composes: p-md from global;
+    composes: pb-s from global;
+}
+
+.priceAdjustmentsSection {
+    composes: mb-sm from global;
+}
+
+.items_review_container {
+    composes: root from '@magento/venia-ui/lib/components/CheckoutPage/ItemsReview/itemsReview.module.css';
+    composes: border-none from global;
+}
+
+.root {
+    composes: root from '@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.module.css';
+    composes: lg_max-w-full from global;
+}
+
+/* prettier-ignore */
+.checkoutContent {
+    composes: block from global;
+}
+
+.checkoutContent_hidden {
+    composes: checkoutContent;
+
+    composes: hidden from global;
+}
+
+.heading_container {
+    composes: heading_container from '@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.module.css';
+}
+
+.heading {
+    composes: heading from '@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.module.css';
+}
+
+.cartLink {
+    composes: root from '@magento/venia-ui/lib/components/LinkButton/linkButton.module.css';
+
+    composes: text-inherit from global;
+}
+
+.stepper_heading {
+    composes: stepper_heading from '@magento/venia-ui/lib/components/LinkButton/linkButton.module.css';
+}
+
+.shipping_method_heading {
+    composes: stepper_heading;
+}
+
+.payment_information_heading {
+    composes: stepper_heading;
+    composes: border-b-0 from global;
+
+    /* On mobile, order summary has a top border, so avoid doubling up. */
+    composes: lg_border-b from global;
+}
+
+.signInContainer {
+    composes: signInContainer from '@magento/venia-ui/lib/components/LinkButton/linkButton.module.css';
+}
+
+.signInLabel {
+    composes: font-semibold from global;
+}
+
+.signInButton {
+    composes: signInButton from '@magento/venia-ui/lib/components/LinkButton/linkButton.module.css';
+}
+
+.empty_cart_container {
+    composes: mb-sm from global;
+}
+
+.shipping_information_container {
+    grid-column: 1 / span 1;
+    composes: relative from global;
+}
+
+.shipping_method_container {
+    grid-column: 1 / span 1;
+    composes: relative from global;
+}
+
+.payment_information_container {
+    grid-column: 1 / span 1;
+}
+
+.price_adjustments_container {
+    grid-column: 1 / span 1;
+}
+
+.items_review_container {
+    grid-column: 1 / span 1;
+}
+
+.summaryContainer {
+    grid-column: 1 / span 1;
+
+    composes: lg_h-minContent from global;
+    composes: lg_sticky from global;
+    /* TODO @TW: review. Magic number. Slightly bigger than sticky header. */
+    composes: lg_top-[6rem] from global;
+}
+
+@media (min-width: 960px) {
+    .summaryContainer {
+        grid-column: 2 / span 1;
+        grid-row: 2 / span 3;
+    }
+
+    .reCaptchaMargin {
+        margin-bottom: 5.5rem;
+    }
+
+    .signInContainerVisible {
+        grid-row: 1 / span 3;
+    }
+}
+
+.formErrors {
+    composes: formErrors from '@magento/venia-ui/lib/components/LinkButton/linkButton.module.css';
+}
+
+.review_order_button {
+    composes: root_highPriority from '@magento/venia-ui/lib/components/Button/button.module.css';
+
+    grid-column: 1 / span 1;
+    composes: m-auto from global;
+}
+
+.place_order_button {
+    composes: root_highPriority from '@magento/venia-ui/lib/components/Button/button.module.css';
+
+    grid-column: 1 / span 1;
+    composes: m-auto from global;
+}

@@ -20,8 +20,10 @@ The extension supports three different checkout layouts:
 
 - **3columns** - Default layout
 <img src="./docs/3columns.png" width="800px">
+
 - **2columns** - A more compact layout
 <img src="./docs/2columns.png" width="800px">
+
 - **1column** - A single-column layout for a streamlined experience
 <img src="./docs/1column.png" width="800px">
 
